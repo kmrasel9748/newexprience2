@@ -1,0 +1,1320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/
+xhtml1-transitional.dtd">
+<html xmlns=" http: //www.w3.org/1999/xhtml">
+<head>
+<title>My photo gallery</title>
+<meta http-equiv= "Content-Type" content= "text/html; charset=utf-8" />
+<style type= 'text/css' >
+* {
+
+
+
+
+background-color: #d22222;
+
+.container{
+	 margin-top:30px;
+	 
+}	 
+	 
+  margin:0;
+  padding:0;
+  outline:0;
+}
+body {
+font-size:12px;
+  line-height:1.3;
+  font-family:Arial, Helvetica, Sans-Serif;
+  color:#ccc;
+  background:url( 'images/body-bg.gif' );
+}
+a {
+  color:#e7b038;
+  text-decoration:underline;
+  cursor:pointer;
+}
+a:hover {
+  text-decoration:none;
+}
+a img {
+  border:0;
+}
+input, textarea, select {
+  font-size:12px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+textarea {
+  overflow:auto;
+}
+.cl {
+  display:block;
+  height:0;
+  font-size:0;
+  line-height:0;
+  text-indent:-4000px;
+  clear:both;
+}
+.notext {
+  font-size:0;
+  line-height:0;
+  text-indent:-4000px;
+}
+.left, .alignleft {
+float :left;
+display:inline;
+}
+.right, .alignright {
+float :right;
+display:inline;
+}
+.text-right {
+  text-align:right;
+}
+h2 {
+  font-size:10px;
+  color:#f2a223;
+  font-weight:bold;
+}
+h3 {
+  font-size:14px;
+  color:#fff;
+  font-weight:bold;
+}
+h4 {
+  font-size:14px;
+  color:#f3b12b;
+  font-weight:bold;
+}
+#shell {
+  width:980px;
+  margin:0 auto;
+}
+#header {
+  position:relative;
+}
+h1#logo {
+  position:absolute;
+  top:37px;
+  left:0;
+}
+h1#logo a {
+float :left;
+width:239px;
+height:49px;
+background:url( 'images/logo.gif' ) no-repeat 0 0;
+font-size:0;
+line-height:0;
+text-indent:-4000px;
+}
+.social {
+float :right;
+width:160px;
+padding-top:11px;
+}
+.social span {
+float :left;
+display:inline;
+font-size:10px;
+color:#9f9f9f;
+line-height:16px;
+padding-right:5px;
+}
+.social ul {
+  list-style:none;
+}
+.social ul li {
+float :left;
+display:inline;
+width:16px;
+padding-right:2px;
+}
+.social ul li a {
+float :left;
+display:inline;
+width:16px;
+height:16px;
+background:url( 'images/social.gif' ) no-repeat 0 0;
+font-size:0;
+line-height:0;
+text-indent:-4000px;
+}
+.social ul li a.facebook {
+  background-position:-18px 0;
+}
+.social ul li a.vimeo {
+  background-position:-36px 0;
+}
+.social ul li a.rss {
+  background-position:-54px 0;
+}
+#navigation {
+float :right;
+clear:right;
+padding-top:28px;
+padding-bottom:47px;
+}
+#navigation ul {
+  list-style:none;
+}
+#navigation ul li {
+float :left;
+display:inline;
+padding-left:29px;
+}
+#navigation ul li a {
+  font-size:14px;
+  font-weight:bold;
+  color:#fff;
+  text-decoration:none;
+}
+#navigation ul li a.active, #navigation ul li a:hover {
+  color:#d91d2a;
+}
+#sub-navigation {
+  display:block;
+  clear:right;
+  border-top:1px dashed #666;
+  border-bottom:1px dashed #666;
+  padding:8px 0;
+}
+#sub-navigation ul {
+  list-style:none;
+}
+#sub-navigation ul li {
+float :left;
+display:inline;
+padding-right:23px;
+}
+#sub-navigation ul li a {
+  font-size:14px;
+  font-weight:bold;
+  color:#fff;
+  line-height:24px;
+  text-decoration:none;
+}
+#sub-navigation ul li a:hover {
+  text-decoration:underline;
+}
+#search {
+  width:346px;
+  margin:0 0 0 auto;
+}
+#search label {
+float :left;
+display:inline;
+font-size:14px;
+font-weight:bold;
+color:#fff;
+line-height:24px;
+padding-right:6px;
+}
+#search .search-field {
+  width:238px;
+  border:1px solid #413e3e;
+  background:#000;
+  color:#787878;
+  padding:2px 0 2px 2px;
+}
+#search .search-button {
+  font-size:14px;
+  font-weight:bold;
+  border:0;
+  background:none;
+  color:#fff;
+  cursor:pointer;
+}
+#main {
+  border-bottom:1px dashed #413e3e;
+}
+#content {
+}
+.box {
+  width:980px;
+  border-bottom:1px dashed #413e3e;
+  padding-bottom:21px;
+}
+.box .head {
+  width:980px;
+  padding-top:14px;
+  padding-bottom:11px;
+}
+.box .head h2 {
+float :left;
+display:inline;
+}
+.box .movie {
+  width:152px;
+float :left;
+padding-right:12px;
+}
+.movie-image {
+float :left;
+width:152px;
+height:214px;
+position:relative;
+}
+.movie-image img {
+  width:152px;
+  height:214px;
+ }
+ 
+ 
+ 
+.movie-image a {
+float :left;
+display:inline;
+width:152px;
+height:214px;
+position:relative;
+z-index:2;
+}
+.play {
+  position:absolute;
+  top:0;
+  left:0;
+  width:152px;
+  height:214px;
+  background:url( 'km Rasel.jpg' );
+display:block;
+z-index:5;
+cursor:pointer;
+display:none;
+}
+.movie span.name {
+  font-weight:bold;
+  color:#fff;
+  font-size:14px;
+  text-align:center;
+  padding-top:160px;
+  display:block;
+}
+.box .last {
+  padding:0;
+}
+.rating {
+float :left;
+width:152px;
+padding-top:8px;
+}
+.rating p {
+float :left;
+font-size:10px;
+color:#fff;
+font-weight:bold;
+}
+.rating .stars {
+float :left;
+width:60px;
+height:11px;
+background:url( 'images/stars.gif' ) no-repeat 0 0;
+margin-left:2px;
+}
+.rating .stars-in {
+  width:48px;
+  display:inline;
+  background:url( 'images/stars.gif' ) no-repeat 0 bottom;
+position:absolute;
+height:11px;
+font-size:0;
+line-height:0;
+text-indent:-4000px;
+}
+.comments {
+  background:url( 'images/comments.gif' ) no-repeat 0 center;
+padding-left:12px;
+float :right;
+}
+#news {
+  width:460px;
+float :left;
+}
+#news .head {
+  width:460px;
+  padding-top:11px;
+  padding-bottom:14px;
+}
+#news h3, #coming h3 {
+float :left;
+}
+#coming {
+  width:490px;
+float :left;
+padding-left:30px;
+}
+#coming .head {
+  width:490px;
+  padding-top:11px;
+  padding-bottom:14px;
+}
+#coming .head strong {
+  color:#ff361a;
+}
+#coming .content {
+  min-height:130px;
+  height:auto !important;
+  height:130px;
+  padding-bottom:20px;
+}
+#coming .content h4 {
+  padding-bottom:3px;
+}
+.content {
+  padding-bottom:28px;
+}
+.content .date {
+  font-size:10px;
+  color:#fff;
+}
+.content img {
+float :left;
+width:68px;
+padding-right:8px;
+}
+.content p {
+  font-size:13px;
+  color:#fff;
+  line-height:16px;
+}
+.content a {
+  font-size:11px;
+}
+#footer {
+  padding:15px 0 0 0;
+  font-size:10px;
+}
+#footer, #footer a {
+  color:#9c9c9c;
+  text-decoration:none;
+}
+#footer a:hover {
+  text-decoration:none;
+}
+#footer p {
+  margin:0;
+  padding:0 0 11px 0;
+  line-height:normal;
+  white-space:nowrap;
+}
+#footer .lf {
+float :left;
+}
+#footer .rf {
+float :right;
+}
+</style>
+<script type= "text/javascript" src= "js/jquery-1.4.2.min.js" ></script>
+<script type= "text/javascript" src= "js/jquery-func.js" ></script>
+<!--[ if IE 6]><link rel= "stylesheet" href= "moviehunter-css/ie6.css" type= "text/css" media= "all" /><
+![endif]-->
+</head>
+<body>
+<!-- START PAGE SOURCE -->
+<div id= "shell" >
+<div id= "header" >
+<h1 id= "logo" ><a href= "#">MovieHunter</a></h1>
+<div class = "social" > <span>FOLLOW US ON:</span>
+<ul>
+<li><a class ="twitter" href= "#" >twitter</a></li>
+<li><a class ="facebook" href= "#">facebook</a></li>
+<li><a class ="vimeo" href= "#">vimeo</a></li>
+<li><a class ="rss" href= "#" >rss</a></li>
+</ul>
+</div>
+<div id= "navigation" >
+<ul>
+<li><a class ="active" href= "index.html" >Home page</a></li>
+<li><a href= "http://prothom-alo.com" >NEWS</a></li>
+<li><a href= "My personal documents.html" >My documents</a></li>
+<li><a href= "My poem.html" >Poems page</a></li>
+<li><a href= "My personal documents.html" >Results</a></li>
+<li><a href= "My photo gallary.html" >Gallery</a></li>
+</ul>
+</div>
+<div id= "sub-navigation" >
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="My photo gallary.html">Gallery</a></li>
+<li><a href="My poem.html">Poems</a></li>
+<li><a href="My personal documents.html">Documents</a></li>
+</ul>
+<div id= "search" >
+<form action= "#" method= "get" accept-charset= "utf-8" >
+<label for ="search-field" >SEARCH</label>
+<input type= "text" name= "search field" value= "Enter search here" id= "search-field" class ="
+blink search-field" />
+<input type= "submit" value= "GO!" class ="search-button" />
+</form>
+</div>
+</div>
+</div>
+<div id= "main" >
+<div class="container"></div>
+<marquee>
+<h1><I style="color:blue">Welcome to visit my photo gallery-</I><I style="color:orange">স্বাগতম আমার ফটো গ্যালারী পরিদর্শনের জন্য</I></h1>
+</marquee>
+<div class="container"></div>
+
+<h1 style="color:black">My families of photos</h1>
+
+
+
+
+
+<div id= "content" >
+<div class ="box" >
+<div class ="head" >
+<h2>LATEST TRAILERS</h2>
+<p class ="text-right" ><a href= "#" >See all</a></p>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >X-MAN</span></span><img src= "Rasel kh.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">1</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >SPIDER MAN 2</span></span><img src= "12.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">2</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >SPIDER MAN 3</span></span>
+<img src= "13.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">3</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >VALKYRIE</span></span><img src= "14.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">4</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >GLADIATOR</span></span><img src= "15.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">5</span> </div>
+</div>
+<div class ="movie last" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >ICE AGE</span></span><img src= "16.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">6</span> </div>
+</div>
+<div class ="cl" >&nbsp;</div>
+</div>
+<div class ="box" >
+<div class ="head" >
+<h2>TOP RATED</h2>
+<p class ="text-right" ><a href= "#" >See all</a></p>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >TRANSFORMERS</span></span><img src= "17.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">7</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >MAGNETO</span></span><img src= "18.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">8</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >KUNG FU PANDA</span></span
+><img src= "19.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">9</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >EAGLE EYE</span></span><img src= "20.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">10</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >NARNIA</span></span><img src= "21.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">11</span> </div>
+</div>
+<div class ="movie last" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >ANGELS &amp; DEMONS</span>
+</span><img src= "22.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">12</span> </div>
+</div>
+<div class ="cl" >&nbsp;</div>
+</div>
+<div class ="box" >
+<div class ="head" >
+<h2>MOST COMMENTED</h2>
+<p class ="text-right" ><a href= "#" >See all</a></p>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >HOUSE</span></span><img src= "23.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">13</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >VACANCY</span></span><img src= "24.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">14</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >MIRRORS</span></span><img src= "25.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">15</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >THE KINGDOM</span></span>
+<img src= "26.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">16</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >MOTIVES</span></span><img src= "27.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">17</span> </div>
+</div>
+<div class ="movie last" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >THE PRESTIGE</span></span>
+<img src= "28.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">18</span> </div>
+</div>
+<div class ="cl" >&nbsp;</div>
+</div>
+</div>
+
+
+
+
+<div id= "content" >
+<div class ="box" >
+<div class ="head" >
+<h2>LATEST TRAILERS</h2>
+<p class ="text-right" ><a href= "#" >See all</a></p>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >X-MAN</span></span><img src= "29.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">19</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >SPIDER MAN 2</span></span>
+<img src= "30.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">20</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >SPIDER MAN 3</span></span>
+<img src= "31.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">21</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >VALKYRIE</span></span><img src= "32.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">22</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >GLADIATOR</span></span><img src= "33.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">23</span> </div>
+</div>
+<div class ="movie last" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >ICE AGE</span></span><img src= "34.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">24</span> </div>
+</div>
+<div class ="cl" >&nbsp;</div>
+</div>
+<div class ="box" >
+<div class ="head" >
+<h2>TOP RATED</h2>
+<p class ="text-right" ><a href= "#" >See all</a></p>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >TRANSFORMERS</span></span>
+<img src= "35.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">25</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >MAGNETO</span></span><img src= "36.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">26</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >KUNG FU PANDA</span></span
+> <img src= "37.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">27</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >EAGLE EYE</span></span> <img src= "38.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">28</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >NARNIA</span></span><img src= "39.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">29</span> </div>
+</div>
+<div class ="movie last" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >ANGELS &amp; DEMONS</span>
+</span> <img src= "40.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">30</span> </div>
+</div>
+<div class ="cl" >&nbsp;</div>
+</div>
+<div class ="box" >
+<div class ="head" >
+<h2>MOST COMMENTED</h2>
+<p class ="text-right" ><a href= "#" >See all</a></p>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >HOUSE</span></span> <img src= "41.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">31</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >VACANCY</span></span> <img src= "42.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">32</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >MIRRORS</span></span> <img src= "43.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">33</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >THE KINGDOM</span></span>
+<img src= "44.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">34</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >MOTIVES</span></span> <img src= "45.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">35</span> </div>
+</div>
+<div class ="movie last" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >THE PRESTIGE</span></span>
+<img src= "46.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">36</span> </div>
+</div>
+<div class ="cl" >&nbsp;</div>
+</div>
+</div>
+
+
+
+<div id= "content" >
+<div class ="box" >
+<div class ="head" >
+<h2>LATEST TRAILERS</h2>
+<p class ="text-right" ><a href= "#" >See all</a></p>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >X-MAN</span></span> <img src= "47.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">37</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >SPIDER MAN 2</span></span>
+<img src= "11.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">38</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >SPIDER MAN 3</span></span>
+<img src= "n1.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">39</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >VALKYRIE</span></span> <img src= "n2.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">40</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >GLADIATOR</span></span> <img src= "51.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">41</span> </div>
+</div>
+<div class ="movie last" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >ICE AGE</span></span> <img src= "52.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">42</span> </div>
+</div>
+<div class ="cl" >&nbsp;</div>
+</div>
+<div class ="box" >
+<div class ="head" >
+<h2>TOP RATED</h2>
+<p class ="text-right" ><a href= "#" >See all</a></p>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >TRANSFORMERS</span></span>
+<img src= "53.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">43</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >MAGNETO</span></span> <img src= "54.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">44</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >KUNG FU PANDA</span></span
+> <img src= "55.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">45</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >EAGLE EYE</span></span> <img src= "56.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">46</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >NARNIA</span></span> <img src= "57.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">47</span> </div>
+</div>
+<div class ="movie last" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >ANGELS &amp; DEMONS</span>
+</span> <img src= "58.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">48</span> </div>
+</div>
+<div class ="cl" >&nbsp;</div>
+</div>
+<div class ="box" >
+<div class ="head" >
+<h2>MOST COMMENTED</h2>
+<p class ="text-right" ><a href= "#" >See all</a></p>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >HOUSE</span></span> <img src= "59.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">49</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >VACANCY</span></span> <img src= "60.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">50</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >MIRRORS</span></span> <img src= "61.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">51</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >THE KINGDOM</span></span>
+<img src= "62.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">52</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >MOTIVES</span></span> <img src= "63.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">53</span> </div>
+</div>
+<div class ="movie last" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >THE PRESTIGE</span></span>
+<img src= "64.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">54</span> </div>
+</div>
+<div class ="cl" >&nbsp;</div>
+</div>
+</div>
+
+
+
+
+<div id= "content" >
+<div class ="box" >
+<div class ="head" >
+<h2>LATEST TRAILERS</h2>
+<p class ="text-right" ><a href= "#" >See all</a></p>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >X-MAN</span></span> <img src= "65.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">55</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >SPIDER MAN 2</span></span>
+<img src= "66.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">56</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >SPIDER MAN 3</span></span>
+<img src= "67.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">57</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >VALKYRIE</span></span> <img src= "68.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">58</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >GLADIATOR</span></span> <img src= "69.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">59</span> </div>
+</div>
+<div class ="movie last" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >ICE AGE</span></span> <img src= "70.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">60</span> </div>
+</div>
+<div class ="cl" >&nbsp;</div>
+</div>
+<div class ="box" >
+<div class ="head" >
+<h2>TOP RATED</h2>
+<p class ="text-right" ><a href= "#" >See all</a></p>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >TRANSFORMERS</span></span>
+<img src= "71.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">61</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >MAGNETO</span></span> <img src= "72.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">62</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >KUNG FU PANDA</span></span
+> <img src= "73.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">63</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >EAGLE EYE</span></span> <img src= "74.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">64</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >NARNIA</span></span> <img src= "75.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">65</span> </div>
+</div>
+<div class ="movie last" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >ANGELS &amp; DEMONS</span>
+</span> <img src= "a1.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">66</span> </div>
+</div>
+<div class ="cl" >&nbsp;</div>
+</div>
+<div class ="box" >
+<div class ="head" >
+<h2>MOST COMMENTED</h2>
+<p class ="text-right" ><a href= "#" >See all</a></p>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >HOUSE</span></span> <img src= "77.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">67</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >VACANCY</span></span> <img src= "78.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">68</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >MIRRORS</span></span> <img src= "79.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">69</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >THE KINGDOM</span></span>
+<img src= "n4.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">70</span> </div>
+</div>
+<div class ="movie" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >MOTIVES</span></span> <img src= "n5.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">71</span> </div>
+</div>
+<div class ="movie last" >
+<div class ="movie-image" > <span class = "play" ><span class ="name" >THE PRESTIGE</span></span>
+<img src= "n6.jpg" alt= "" /></a> </div>
+<div class ="rating" >
+<p>RATING</p>
+<div class = "stars" >
+<div class ="stars-in" > </div>
+</div>
+<span class ="comments">72</span> </div>
+</div>
+<div class ="cl" >&nbsp;</div>
+</div>
+</div>
+
+
+
+</body>
+</html>
+
+
+<div class="container">
+<div style="background-color:#8b008b; color:white; padding:20px;">
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Untitled</title>
+<meta charset="UTF-8"/>
+<link rel="stylesheet" href="" type="text/css"/>
+</head>
+<style>
+*
+{
+margin:0px;
+padding:0px;
+}
+#menu ul
+{
+list-style:none;
+}
+#menu ul li
+{
+background-color:red;
+border:1px solid white;
+width:50px;
+hight:40px;
+line-hight:35px;
+text-align:center;
+float:left;
+position:relative;
+border-radius:8px;
+}
+#menu ul li a
+{
+text-decoration:none;
+color:white;
+display:block;
+}
+#menu ul li a:hover
+{
+background-color:green;
+border-radius:8px;
+}
+#menu ul ul
+{
+position:absolute;
+display:none;
+}
+#menu ul li:hover>ul
+{
+display:block;
+}
+#menu ul ul ul
+{
+margin-left:50px;
+top:0px;
+}
+</style>
+<body>
+<div id="menu">
+
+<ul>
+<li><a href="Index.html">1</a></li>
+<li><a href="My photo gallary.html">2</a></li>
+<li><a href="My poem.html">3</a></li>
+<li><a href="My personal contance.html">4</a></li>
+<li><a href="My personal Documents.html">5</a></li>
+
+</ul>
+
+
+</div>
+</body>
+</html>
