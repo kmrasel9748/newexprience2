@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+	 <title>Untitled</title>
+	 <meta charset="UTF-8"/>
+	 <link rel="stylesheet" href="" type="text/css"/>
+ </head>
+	 <body>
+	 
+	 <!DOCTYPE html>
+<html>
+
+<head>
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="11.jpg">
+                <!-- random image -->
+                <div class="caption center-align">
+                    <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="12.jpg">
+                <!-- random image -->
+                <div class="caption left-align">
+                    <h3>Left Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="13.jpg">
+                <!-- random image -->
+                <div class="caption right-align">
+                    <h3>Right Aligned Caption</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+            <li>
+                <img src="14.jpg">
+                <!-- random image -->
+                <div class="caption center-align">
+                    <h3>This is our big Tagline!</h3>
+                    <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('.slider').slider({
+                full_width: true
+            });
+        });
+    </script>
+
+</body>
+
+</html>
+	 
+	 <!DOCTYPE html> 
+<html> 
+ 
+<body> 
+ <h1>Formatted Date & Time</h1> 
+ 
+ <p>we can format the date from new Date()</p> 
+ 
+ <input type="button" onclick="get_date();" value="Formatted System Date & Time"> 
+ 
+ <div id="d1"></div> 
+ 
+ <script> 
+  function get_date() 
+  { 
+   var today = new Date(); 
+   var day = today.getDate(); 
+   var month = today.getMonth() + 1; 
+   var year = today.getFullYear(); 
+   var hour = today.getHours(); 
+   var minute = today.getMinutes(); 
+ 
+   document.getElementById('d1').innerHTML = day + "/" + month + "/" + year + "  " + hour + ":" + minute; 
+ 
+  } 
+ </script> 
+ 
+</body> 
+ 
+</html>
+	 
+	 
+	
+	 </body>
+ </html>
